@@ -19,7 +19,7 @@ const PrivateScreen = ({ history }) => {
       };
 
       try {
-        const { data } = await axios.get("/api/private", config);
+        const { data } = await axios.get("https://mern-auth-101.herokuapp.com/api/private", config);
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-
-import "./ResetPasswordScreen.css";
 import { toast } from "react-toastify";
 
 const ResetPasswordScreen = ({ history, match }) => {
@@ -25,7 +23,7 @@ const ResetPasswordScreen = ({ history, match }) => {
 
     try {
       const { data } = await axios.put(
-        `/api/auth/password-reset/${match.params.resetToken}`,
+        `https://mern-auth-101.herokuapp.com/api/auth/password-reset/${match.params.resetToken}`,
         {
           password,
         },

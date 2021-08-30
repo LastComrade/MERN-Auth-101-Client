@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./LoginScreen.css";
 import { toast } from "react-toastify";
 
 const LoginScreen = ({ history }) => {
@@ -19,7 +18,7 @@ const LoginScreen = ({ history }) => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("/api/auth/login", { email, password });
+      const { data } = await axios.post("https://mern-auth-101.herokuapp.com/api/auth/login", { email, password });
       localStorage.setItem("authToken", data.token);
       toast.success("Login Successful");
       history.push("/");

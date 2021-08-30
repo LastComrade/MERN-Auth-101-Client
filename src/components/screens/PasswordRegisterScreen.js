@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import axios from "axios";
-import "./RegisterScreen.css";
 import { toast } from "react-toastify";
 
 const PasswordRegisterScreen = ({ match, history }) => {
@@ -17,7 +16,7 @@ const PasswordRegisterScreen = ({ match, history }) => {
     }
     try {
       const { data } = await axios.put(
-        `/api/auth/activate-account/${match.params.registertoken}`,
+        `https://mern-auth-101.herokuapp.com/api/auth/activate-account/${match.params.registertoken}`,
         {
           password,
         }

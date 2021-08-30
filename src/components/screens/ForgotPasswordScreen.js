@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import "./ForgotPasswordScreen.css";
 import { toast } from "react-toastify";
 
 const ForgotPasswordScreen = () => {
@@ -15,7 +14,7 @@ const ForgotPasswordScreen = () => {
     };
     try {
       const { data } = await axios.post(
-        "/api/auth/forgot-password",
+        "https://mern-auth-101.herokuapp.com/api/auth/forgot-password",
         { email },
         config
       );

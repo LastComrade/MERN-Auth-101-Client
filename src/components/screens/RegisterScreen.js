@@ -2,7 +2,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./RegisterScreen.css";
 import { toast } from "react-toastify";
 
 const RegisterScreen = ({ history }) => {
@@ -12,7 +11,7 @@ const RegisterScreen = ({ history }) => {
   const registerHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/auth/register", { name, email });
+      const { data } = await axios.post("https://mern-auth-101.herokuapp.com/api/auth/register", { name, email });
       toast.success(data.data);
     } catch (error) {
       toast.error (error.response.data.error);
